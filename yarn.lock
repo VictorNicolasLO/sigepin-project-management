@@ -675,11 +675,6 @@ bluebird@3.5.1:
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.1.tgz#d9551f9de98f1fcda1e683d17ee91a0602ee2eb9"
   integrity sha512-MKiLiV+I1AA596t9w1sQJ8jkiSr5+ZKi0WKrYGUn6d1Fx+Ij4tIj+m2WMQSGczs5jZVxV339chE8iwk6F64wjA==
 
-bluebird@^3.5.5:
-  version "3.7.1"
-  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.7.1.tgz#df70e302b471d7473489acf26a93d63b53f874de"
-  integrity sha512-DdmyoGCleJnkbp3nkbxTLJ18rjDsE4yCggEwKNXkeV123sPNfOCYeDoeuOY+F2FrSjO1YXcTU+dsy96KMy+gcg==
-
 brace-expansion@^1.1.7:
   version "1.1.11"
   resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.11.tgz#3c7fcbf529d87226f3d2f52b966ff5271eb441dd"
@@ -1516,10 +1511,10 @@ event-emitter@~0.3.4:
     d "1"
     es5-ext "~0.10.14"
 
-eventemitter2@^5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/eventemitter2/-/eventemitter2-5.0.1.tgz#6197a095d5fb6b57e8942f6fd7eaad63a09c9452"
-  integrity sha1-YZegldX7a1folC9v1+qtY6CclFI=
+eventemitter2@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/eventemitter2/-/eventemitter2-6.0.0.tgz#218eb512c3603c5341724b6af7b686a1aa5ab8f5"
+  integrity sha512-ZuNWHD7S7IoikyEmx35vPU8H1W0L+oi644+4mSTg7nwXvBQpIwQL7DPjYUF0VMB0jPkNMo3MqD07E7MYrkFmjQ==
 
 exec-sh@^0.3.2:
   version "0.3.2"
@@ -1649,10 +1644,10 @@ fast-levenshtein@~2.0.4:
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
   integrity sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=
 
-fastest-validator@^0.6.18:
-  version "0.6.19"
-  resolved "https://registry.yarnpkg.com/fastest-validator/-/fastest-validator-0.6.19.tgz#5522cf29a13090df71862c7df4b29d1f49165a91"
-  integrity sha512-U+hjn/Au+sgGfrwb26t26hywrItCdkpQ7VEJPY7Ey0FU2mnH/L4xhcs0R9Bd+y57aUKlasC3W4J6t8fOyXji6Q==
+fastest-validator@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/fastest-validator/-/fastest-validator-1.0.0.tgz#bf689045419a3c0c505f8dbe20af927a33438215"
+  integrity sha512-IWgpsKOIQ27WTNGvpm9qasTeuM/tFeYOtqfxmet3QdsrRiJjZfYxrmYDrZ0TPOVgF1cGKYoDxdl928woZHa8cg==
 
 fb-watchman@^2.0.0:
   version "2.0.0"
@@ -1757,6 +1752,11 @@ flatted@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-2.0.1.tgz#69e57caa8f0eacbc281d2e2cb458d46fdb449e08"
   integrity sha512-a1hQMktqW9Nmqr5aktAux3JMNqaucxGcjtjWnZLHX7yyPCmlSV3M54nGYbqT8K+0GhF3NBgmJCc3ma+WOgX8Jg==
+
+fn-args@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/fn-args/-/fn-args-5.0.0.tgz#7a18e105c8fb3bf0a51c30389bf16c9ebe740bb3"
+  integrity sha512-CtbfI3oFFc3nbdIoHycrfbrxiGgxXBXXuyOl49h47JawM1mYrqpiRqnH5CB2mBatdXvHHOUO6a+RiAuuvKt0lw==
 
 for-in@^1.0.2:
   version "1.0.2"
@@ -1886,10 +1886,22 @@ glob-parent@^5.0.0:
   dependencies:
     is-glob "^4.0.1"
 
-glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4:
+glob@^7.1.1, glob@^7.1.2, glob@^7.1.3:
   version "7.1.5"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.5.tgz#6714c69bee20f3c3e64c4dd905553e532b40cdc0"
   integrity sha512-J9dlskqUXK1OeTOYBEn5s8aMukWMwWfs+rPTn/jn50Ux4MNXVhubL1wu/j2t+H4NVI+cXEcCaYellqaPVGXNqQ==
+  dependencies:
+    fs.realpath "^1.0.0"
+    inflight "^1.0.4"
+    inherits "2"
+    minimatch "^3.0.4"
+    once "^1.3.0"
+    path-is-absolute "^1.0.0"
+
+glob@^7.1.6:
+  version "7.1.6"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.6.tgz#141f33b81a7c2492e125594307480c46679278a6"
+  integrity sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==
   dependencies:
     fs.realpath "^1.0.0"
     inflight "^1.0.4"
@@ -3166,21 +3178,22 @@ moleculer-repl@^0.5.7:
     tiny-human-time "^1.2.0"
     vorpal "^1.12.0"
 
-moleculer@^0.13.9:
-  version "0.13.11"
-  resolved "https://registry.yarnpkg.com/moleculer/-/moleculer-0.13.11.tgz#682572d7717d58e8ebbfaca082654ee6ba546521"
-  integrity sha512-Kim2I/QfyUupxxIKDwsmSt7J+Q5ohmnEhO0iMz+MDFOL35+E9NS2y3Oi66hSbTDsgMeJNAX3BNs9Ct+dtIzPxg==
+moleculer@^0.14.0-rc2:
+  version "0.14.0-rc2"
+  resolved "https://registry.yarnpkg.com/moleculer/-/moleculer-0.14.0-rc2.tgz#e014c36f464c1eb9d4a13cf55755a7cabf2b7631"
+  integrity sha512-4R2NMjYXhVcOE+OIl8SGEWWXwCDx2g9q1oIVri2jWmDmYWklhIKCP+P9OUK7qXXA9KVT2ksgv5iD8p+mP+vJhg==
   dependencies:
     args "^5.0.1"
-    bluebird "^3.5.5"
-    chalk "^2.4.2"
     es6-error "^4.1.1"
-    eventemitter2 "^5.0.1"
-    fastest-validator "^0.6.18"
-    glob "^7.1.4"
+    eventemitter2 "^6.0.0"
+    fastest-validator "^1.0.0"
+    fn-args "^5.0.0"
+    glob "^7.1.6"
     ipaddr.js "^1.9.1"
+    kleur "^3.0.3"
     lodash "^4.17.15"
     lru-cache "^5.1.1"
+    node-fetch "^2.6.0"
 
 mongodb-memory-server-core@6.0.1:
   version "6.0.1"
@@ -3308,10 +3321,10 @@ nanomatch@^1.2.9:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-nats@^1.3.0:
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/nats/-/nats-1.3.2.tgz#e80c8fbb31f9e664c6293a7f444d846b9e7659ef"
-  integrity sha512-4BVDo3aT+x+ac/RgW1GXBLkjS7iXYrmQymFgQ33/bYn8VuU65M8gd7yxra+7Dr5J3RRN6+Bt0KhoG9ugzmL0rQ==
+nats@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/nats/-/nats-1.4.0.tgz#c6c5a1ab5ec0bec11c18038257d79e005b243fe1"
+  integrity sha512-dsXZnBN6gFcgIcPLXF72LMaA8cC2edz8J01qRfR7uB4r77DJHaLGYwYsV47/KaUojuavk0agYwxkWbe2J5cGLQ==
   dependencies:
     nuid "^1.0.0"
     ts-nkeys "^1.0.8"
@@ -3349,6 +3362,11 @@ nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
   integrity sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
+
+node-fetch@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.0.tgz#e633456386d4aa55863f676a7ab0daa8fdecb0fd"
+  integrity sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
 
 node-int64@^0.4.0:
   version "0.4.0"

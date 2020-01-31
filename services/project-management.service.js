@@ -1,13 +1,17 @@
 "use strict";
+
+const appName = "project-management";
+
+
 const { projectsApp } = require("../App/projects.app");
 const { projectRolesApp } = require("../App/projectRoles.app");
 module.exports = {
-	name: "project-management",
+	name: `rpc.${appName}`,
 	settings: {},
 	actions: {
 		async createProject({ params, broker }) {
 			const result = await projectsApp.createProject(params.project);
-			broker.emit("project-management.projectCreated", {
+			broker.emit(`ev.${appName}.projectCreated`, {
 				req: params,
 				res: result,
 			});
@@ -18,7 +22,7 @@ module.exports = {
 				params.projectId,
 				params.project,
 			);
-			broker.emit("project-management.projectUpdated", {
+			broker.emit(`ev.${appName}.projectUpdated`, {
 				req: params,
 				res: result,
 			});
@@ -30,7 +34,7 @@ module.exports = {
 				params.participantId,
 				params.projectRoleId,
 			);
-			broker.emit("project-management.participantAddedToProject", {
+			broker.emit(`ev.${appName}.participantAddedToProject`, {
 				req: params,
 				res: result,
 			});
@@ -41,7 +45,7 @@ module.exports = {
 				params.projectId,
 				params.participantId,
 			);
-			broker.emit("project-management.participantRemoved", {
+			broker.emit(`ev.${appName}.participantRemoved`, {
 				req: params,
 				res: result,
 			});
@@ -52,7 +56,7 @@ module.exports = {
 				params.participantProspectId,
 				params.projectId,
 			);
-			broker.emit("project-management.participationRequestMade", {
+			broker.emit(`ev.${appName}.participationRequestMade`, {
 				req: params,
 				res: result,
 			});
@@ -63,7 +67,7 @@ module.exports = {
 				params.participationRequestId,
 				params.projectRoleId,
 			);
-			broker.emit("project-management.participationRequestAccepted", {
+			broker.emit(`ev.${appName}.participationRequestAccepted`, {
 				req: params,
 				res: result,
 			});
@@ -73,7 +77,7 @@ module.exports = {
 			const result = await projectsApp.rejectParticipationRequest(
 				params.participationRequestId,
 			);
-			broker.emit("project-management.participationRequestRejected", {
+			broker.emit(`ev.${appName}.participationRequestRejected`, {
 				req: params,
 				res: result,
 			});
@@ -82,7 +86,7 @@ module.exports = {
 
 		async findProjects({ params, broker }) {
 			const result = await projectsApp.findProject(params.filter);
-			broker.emit("project-management.projectsFound", {
+			broker.emit(`ev.${appName}.projectsFound`, {
 				req: params,
 				res: result,
 			});
@@ -90,7 +94,7 @@ module.exports = {
 		},
 		async findProjectById({ params, broker }) {
 			const result = await projectsApp.findProjectById(params.projectId);
-			broker.emit("project-management.projectFound", {
+			broker.emit(`ev.${appName}.projectFound`, {
 				req: params,
 				res: result,
 			});
@@ -100,7 +104,7 @@ module.exports = {
 			const result = await projectRolesApp.createProjectRole(
 				params.projectRole,
 			);
-			broker.emit("project-management.projectRoleCreated", {
+			broker.emit(`ev.${appName}.projectRoleCreated`, {
 				req: params,
 				res: result,
 			});
@@ -111,7 +115,7 @@ module.exports = {
 				params.projectRoleId,
 				params.projectRole,
 			);
-			broker.emit("project-management.projectRoleUpdated", {
+			broker.emit(`ev.${appName}.projectRoleUpdated`, {
 				req: params,
 				res: result,
 			});
@@ -119,7 +123,7 @@ module.exports = {
 		},
 		async findProjectRoles({ params, broker }) {
 			const result = await projectRolesApp.findProjectRoles(params.filter);
-			broker.emit("project-management.projectRolesFound", {
+			broker.emit(`ev.${appName}.projectRolesFound`, {
 				req: params,
 				res: result,
 			});
@@ -129,7 +133,7 @@ module.exports = {
 			const result = await projectRolesApp.findProjectRoleById(
 				params.projectRoleId,
 			);
-			broker.emit("project-management.projectRoleFound", {
+			broker.emit(`ev.${appName}.projectRoleFound`, {
 				req: params,
 				res: result,
 			});
